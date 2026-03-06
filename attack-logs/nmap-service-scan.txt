@@ -1,0 +1,32 @@
+# Nmap 7.95 scan initiated Fri Mar  6 05:55 EST
+Nmap scan report for 192.168.56.20
+Host is up (0.00099s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql  (Version: 5.0.51a-3ubuntu5)
+5432/tcp open  postgresql
+5900/tcp open  vnc (Protocol 3.3)
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown (Apache Tomcat/5.5)
+OS: Linux 2.6.9 - 2.6.33
+Hostname: metasploitable.localdomain
+MAC Address: 00:0C:29:F3:C4:DE (VMware)
+# Nmap done: 1 IP address (1 host up) scanned in 168.30 seconds
