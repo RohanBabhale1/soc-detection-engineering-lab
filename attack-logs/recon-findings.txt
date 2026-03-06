@@ -1,0 +1,35 @@
+=== RECONNAISSANCE FINDINGS ===
+Target IP: 192.168.56.20
+Scan Date: 2026-03-04
+
+OPEN PORTS DISCOVERED:
+21, 22, 23, 25, 53, 80, 111, 5432, 5900, 6667, 8009, 8180
+
+EXPLOITATION TARGET IDENTIFIED:
+Service  : vsftpd 2.3.4
+Port     : 21 (FTP)
+CVE      : CVE-2011-2523
+BID      : 48539
+Disclosed: 2011-07-03
+Vulnerability: Backdoor inserted into vsftpd source code.
+               Username ending with ":)" triggers shell on port 6200.
+Proof    : Nmap script confirmed uid=0(root) gid=0(root)
+Risk     : CRITICAL - unauthenticated remote root access
+
+OTHER NOTABLE SERVICES:
+- OpenSSH 4.7p1 on port 22   (outdated, brute-forceable)
+- Telnet on port 23           (plaintext credentials)
+- Apache 2.2.8 on port 80    (outdated)
+- UnrealIRCd on port 6667    (known backdoor - secondary target)
+- PostgreSQL 8.3.0 port 5432 (old version)
+- Apache Tomcat 5.5 port 8180 (outdated)
+- VNC on port 5900            (weak authentication)
+
+OS FINGERPRINT:
+Linux 2.6.9 - 2.6.33 (ancient kernel)
+Hostname: metasploitable.localdomain
+
+ATTACK PLAN:
+Phase 1 - Exploit vsftpd 2.3.4 backdoor via Metasploit
+Phase 2 - Establish reverse shell via Netcat on port 4444
+Phase 3 - Post-exploitation enumeration
